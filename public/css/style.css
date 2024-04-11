@@ -5082,6 +5082,8 @@ blockquote footer a {
     transition: all .3s ease;
     text-transform: capitalize;
 }
+
+
 .nav-t-holder ul.nav li.has-t-submenu > a > button {
     display: none;
 }

@@ -49,7 +49,10 @@
            <div class="col-lg-4 col-md-3 col-sm-12 col-xs-12 t-logo"><a href="{{ route('index') }}"><img src="images/home_page_variation5/lg1.png" alt="logo" class="img-responsive"></a></div> 
           <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12 text-right">
             <div class="top-two-right">
-              <div class="req-button text-right"><a href="{{ route('quote') }}" class="submit">requet a quote</a></div>
+              <div class="req-button text-right"><a href="{{ route('quote') }}" class="submit">requet a quote</a>
+              </div>
+
+             
               <div class="top-panel">
                 <div class="touch_top touch_top_pad">
                   <ul class="nav">
@@ -81,7 +84,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-3 col-sm-12 col-xs-12">
-              <div class="logo"><img src="images/logo-mobile.png" alt=""></div>
+              <div class="logo"><img src="images/mobile-logo.png" alt=""></div>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div class="navi">
@@ -145,22 +148,24 @@
           <div class="widget about-us-widget col-md-3 col-sm-6"><a href="#"><img src="images/home_page_variation5/lg1.png" alt=""></a>
             <p>Soilmen Engineering Services (Nig.) Limited (SESNL) is an indigenous COREN certified geotechnical engineering firm established in 2002 and incorporated in 2006.</p><a href="{{ route('about-us') }}">Read More <i class="fa fa-angle-double-right"></i></a>
             <ul class="nav">
+              <li><a href="https://web.facebook.com/soilmen/?_rdc=1&_rdr"><i class="fa fa-facebook-square"></i></a></li>
               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
               <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
-              <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-              <li><a href="#"><i class="fa fa-skype"></i></a></li>
-              <li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>
+              
+              
             </ul>
           </div>
           <div class="widget widget-links col-md-3 col-sm-6">
-            <h4 class="widget_title">Our Solutions</h4>
+            <h4 class="widget_title">Our Services</h4>
             <div class="widget-contact-list row m0">
               <ul>
-                <li><a href="meterial.html">- Standard Penetration</a></li>
-                <li><a href="agricultural.html">- Laboratory Test Services</a></li>
-                <li><a href="mechanical.html">- Structural Integrity Testing </a></li>
-                <li><a href="chemical.html">- Calibration of Equipments</a></li>
-                <li><a href="power.html">- Pavement Evaluation Test</a></li>
+                <li><a href="{{ route('spt') }}">- Standard Penetration</a></li>
+                <li><a href={{ route('lts') }}>- Laboratory Test Services</a></li>
+                <li><a href={{ route('sit') }}>- Structural Integrity Test </a></li>
+                <li><a href={{ route('coe') }}>- Calibration of Equipments</a></li>
+                <li><a href={{ route('pet') }}>- Pavement Evaluation Test</a></li>
+                <li><a href={{ route('qa') }}>- Quality Control and Quality Assurance</a></li>
+                <li><a href={{ route('dcp') }}>- Dutch Core Penetration</a></li>
                 
               </ul>
             </div>
@@ -201,7 +206,7 @@
     <section class="footer-t-bottom footer-bottom footer-bottom3">
       <div class="container clearfix">
         <div class="pull-left fo-txt">
-          <p>Copyright © Industiral 2024.. All rights reserved.</p>
+          <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">2024 <a href="{{ route('home') }}" target="_blank">SOILMENTECH ENGINEERING</a>. All rights reserved.</span>
         </div>
        
       </div>
@@ -223,6 +228,10 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTI1BZJKFCeJ8g9O01CMZ4QvVCfdPYkrE"></script>
     <script src="js/gmaps.min.js"></script>
     <script src="js/theme.js"></script>
+
+ 
+    
+
   </body>
 
 </html>

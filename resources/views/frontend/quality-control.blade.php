@@ -26,89 +26,44 @@
   <section class="project-post-area sectpad">
     <div class="container clearfix">
       <div class="project-post">
-        <div class="row">
-          <div class="col-sm-4 project-post-info">
-            <div class="project-post-image image_hover"><img src="images/projects/qa1.jpeg" alt="" class="zoom_img_effect">
-              <div class="info-text">
-                {{-- <h4>Oil Plant Project</h4><a href="projects-details.html">View Details</a> --}}
-              </div>
+          <div class="row">
+            @if($QualityControls && $QualityControls->count() > 0)
+            <div class="row">
+                @foreach($QualityControls->chunk(3) as $chunk)
+                    <div class="row">
+                        @foreach($chunk as $index => $QualityControl)
+                            <div class="col-md-4 project-post-info">
+                                <div class="project-post-image image_hover">
+                                    <img src="{{ asset($QualityControl->image) }}" alt="Image {{ $index + 1 }}" class="zoom_img_effect">
+                                    <div class="info-text">
+                                        <h4>{{ $QualityControl->title }}</h4>
+                                        <!-- Add any additional information or links here -->
+                                    </div>
+                                </div>   
+                            </div>
+                        @endforeach
+                    </div>
+                @endforeach
             </div>
-          </div>
-          <div class="col-sm-4 project-post-info">
-            <div class="project-post-image image_hover"><img src="images/projects/qa2.jpeg" alt="" class="zoom_img_effect">
-              <div class="info-text">
-                {{-- <h4>Oil Plant Project</h4><a href="projects-details.html">View Details</a> --}}
-              </div>
+        @else
+            <div class="col-sm-12">
+                <p>No images found.</p>
             </div>
+        @endif
+        
           </div>
-          <div class="col-sm-4 project-post-info">
-            <div class="project-post-image image_hover"><img src="images/projects/qa3.jpeg" alt="" class="zoom_img_effect">
-              <div class="info-text">
-                {{-- <h4>Oil Plant Project</h4><a href="projects-details.html">View Details</a> --}}
-              </div>
-            </div>
-          </div>
-        </div>
+          {{ $QualityControls->links('pagination::bootstrap-4') }}
+
       </div>
-      <div class="project-post">
-        <div class="row">
-          <div class="col-sm-4 project-post-info">
-            <div class="project-post-image image_hover"><img src="images/projects/qa4.jpeg" alt="" class="zoom_img_effect">
-              <div class="info-text">
-                {{-- <h4>Oil Plant Project</h4><a href="projects-details.html">View Details</a> --}}
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 project-post-info">
-            <div class="project-post-image image_hover"><img src="images/projects/qa5.jpeg" alt="" class="zoom_img_effect">
-              <div class="info-text">
-                {{-- <h4>Oil Plant Project</h4><a href="projects-details.html">View Details</a> --}}
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 project-post-info">
-            <div class="project-post-image image_hover"><img src="images/projects/qa6.jpeg" alt="" class="zoom_img_effect">
-              <div class="info-text">
-                {{-- <h4>Oil Plant Project</h4><a href="projects-details.html">View Details</a> --}}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="project-post">
-        <div class="row">
-          <div class="col-sm-4 project-post-info">
-            <div class="project-post-image image_hover"><img src="images/projects/qa7.jpeg" alt="" class="zoom_img_effect">
-              <div class="info-text">
-                {{-- <h4>Oil Plant Project</h4><a href="projects-details.html">View Details</a> --}}
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 project-post-info">
-            <div class="project-post-image image_hover"><img src="images/projects/qa8.jpeg" alt="" class="zoom_img_effect">
-              <div class="info-text">
-                {{-- <h4>Oil Plant Project</h4><a href="projects-details.html">View Details</a> --}}
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 project-post-info">
-            <div class="project-post-image image_hover"><img src="images/projects/lt9.jpeg" alt="" class="zoom_img_effect">
-              <div class="info-text">
-                {{-- <h4>Oil Plant Project</h4><a href="projects-details.html">View Details</a> --}}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
+  
   <!-- Indurial Solution-->
   <section class="indurial-t-solution indurial-solution indpad anim-5-all indurial-t-solution3">
     <div class="container clearfix">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div class="indurial-solution-text text-center">
-            <h2>If  You Need Any Industrial Solution ... We Are Available For You</h2><span class="contactus-button2 text-center"><a href="contact.html" class="submit">Contact Us </a></span>
+            <h2>If  You Need Any Industrial Solution ... We Are Available For You</h2><span class="contactus-button2 text-center"><a href="{{ route('contact-us') }}" class="submit">Contact Us </a></span>
           </div>
         </div>
       </div>

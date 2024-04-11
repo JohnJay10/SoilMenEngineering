@@ -3,7 +3,7 @@
 
     <!-- Inner Header-->
     <section class="inner-banner2 clearfix">
-        <div class="container clearfix">
+        <div class="container clearfix">  
           <h2>Standard Penetration Test</h2>
         </div>
       </section>
@@ -18,7 +18,7 @@
       <!-- Project  Page-->
       <section class="core-projects sectpad">
         <div class="container clearfix">
-          <h1>STANDARD PENETRATION TESTING</h1>
+          <h1>STANDARD PENETRATION TEST</h1>
           {{-- <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p> --}}
         </div>
       </section>
@@ -26,80 +26,45 @@
       <section class="project-post-area sectpad">
         <div class="container clearfix">
           <div class="project-post">
-            <div class="row">
-              <div class="col-sm-4 project-post-info">
-                <div class="project-post-image image_hover"><img src="images/projects/spt1.jpeg" alt="" class="zoom_img_effect">
-                  <div class="info-text">
-                    {{-- <h4>Oil Plant Project</h4><a href="projects-details.html">View Details</a> --}}
-                  </div>
-                </div>
+              <div class="row">
+                  @if($StandardPenetrationTests && $StandardPenetrationTests->count() > 0)
+                      @foreach($StandardPenetrationTests->chunk(3) as $chunk)
+                          <div class="row">
+                              @foreach($chunk as $index => $StandardPenetrationTest)
+                                  <div class="col-md-4 project-post-info">
+                                      <div class="project-post-image image_hover">
+                                          <img src="{{ asset($StandardPenetrationTest->image) }}" alt="Image {{ $index + 1 }}" class="zoom_img_effect">
+                                          <div class="info-text">
+                                               <h4>{{ $StandardPenetrationTest->title }}</h4> 
+                                              <!-- Add any additional information or links here -->
+                                          </div>
+                                      </div>
+                                  </div>
+                              @endforeach
+                          </div>
+                      @endforeach
+                  @else
+                      <div class="col-sm-12">
+                          <p>No images found.</p>
+                      </div>
+                  @endif
               </div>
-              <div class="col-sm-4 project-post-info">
-                <div class="project-post-image image_hover"><img src="images/projects/spt2.jpeg" alt="" class="zoom_img_effect">
-                  <div class="info-text">
-                    {{-- <h4>Oil Plant Project</h4><a href="projects-details.html">View Details</a> --}}
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4 project-post-info">
-                <div class="project-post-image image_hover"><img src="images/projects/spt3.jpeg" alt="" class="zoom_img_effect">
-                  <div class="info-text">
-                    {{-- <h4>Oil Plant Project</h4><a href="projects-details.html">View Details</a> --}}
-                  </div>
-                </div>
-              </div>
-            </div>
+              {{ $StandardPenetrationTests->links('pagination::bootstrap-4') }}
+
           </div>
-          <div class="project-post">
-            <div class="row">
-              <div class="col-sm-4 project-post-info">
-                <div class="project-post-image image_hover"><img src="images/projects/spt4.jpeg" alt="" class="zoom_img_effect">
-                  <div class="info-text">
-                    {{-- <h4>Oil Plant Project</h4><a href="projects-details.html">View Details</a> --}}
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4 project-post-info">
-                <div class="project-post-image image_hover"><img src="images/projects/spt5.jpeg" alt="" class="zoom_img_effect">
-                  <div class="info-text">
-                    {{-- <h4>Oil Plant Project</h4><a href="projects-details.html">View Details</a> --}}
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4 project-post-info">
-                <div class="project-post-image image_hover"><img src="images/projects/spt6.jpeg" alt="" class="zoom_img_effect">
-                  <div class="info-text">
-                    {{-- <h4>Oil Plant Project</h4><a href="projects-details.html">View Details</a> --}}
-                  </div>
-                </div>
-              </div>
-            </div>
+      </div>
+      
+          
           </div>
-          <div class="project-post">
-            <div class="row">
-              <div class="col-sm-4 project-post-info">
-                <div class="project-post-image image_hover"><img src="images/projects/spt7.jpeg" alt="" class="zoom_img_effect">
-                  <div class="info-text">
-                    {{-- <h4>Oil Plant Project</h4><a href="projects-details.html">View Details</a> --}}
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4 project-post-info">
-                <div class="project-post-image image_hover"><img src="images/projects/spt8.jpeg" alt="" class="zoom_img_effect">
-                  <div class="info-text">
-                    {{-- <h4>Oil Plant Project</h4><a href="projects-details.html">View Details</a> --}}
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4 project-post-info">
-                <div class="project-post-image image_hover"><img src="images/projects/spt9.jpeg" alt="" class="zoom_img_effect">
-                  <div class="info-text">
-                    {{-- <h4>Oil Plant Project</h4><a href="projects-details.html">View Details</a> --}}
-                  </div>
-                </div>
-              </div>
-            </div>
+          
+          
+          
           </div>
+
+
+
+          
+          
         </div>
       </section>
       <!-- Indurial Solution-->
@@ -108,11 +73,31 @@
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div class="indurial-solution-text text-center">
-                <h2>If  You Need Any Industrial Solution ... We Are Available For You</h2><span class="contactus-button2 text-center"><a href="contact.html" class="submit">Contact Us </a></span>
+                <h2>If  You Need Any Industrial Solution ... We Are Available For You</h2><span class="contactus-button2 text-center"><a href="{{ route('contact-us') }}" class="submit">Contact Us </a></span>
               </div>
             </div>
           </div>
         </div>
       </section>
       <!-- Indurial Solution-->
+
+      <script>
+        $(document).ready(function() {
+          $('#pagination-links').on('click', '.pagination a', function(e) {
+              e.preventDefault();
+              var url = $(this).attr('href');
+      
+              $.ajax({
+                  url: url,
+                  type: 'GET',
+                  success: function(response) {
+                      // Update the content of the page with the fetched data
+                      $('#posts-container').html(response);
+                      // Update the URL in the browser's address bar
+                      history.pushState({}, null, url);
+                  }
+              });
+          });
+      });
+      </script>
   @endsection

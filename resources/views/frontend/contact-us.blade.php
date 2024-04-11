@@ -67,20 +67,51 @@
         </div>
       </div>
     </section>
-    <section id="map-area">
-      <div id="contact-google-map" data-map-lat="-37.812802" data-map-lng="144.956981" data-icon-path="images/map/map-marker.png" data-map-title="Envato HQ" data-map-zoom="12" class="google-map"></div>
-    </section>
+    <section id="map">
+      <div id="contact-google-map" data-map-lat= "9.136700"data-map-lng="7.360241" data-icon-path="images/map/map-marker.png" data-map-title="Envato HQ" data-map-zoom="12" class="google-map"></div>
+  </section>
+  
+  
     <!-- Indurial Solution-->
     <section class="indurial-t-solution indurial-solution indpad anim-5-all indurial-t-solution3">
       <div class="container clearfix">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="indurial-solution-text text-center">
-              <h2>If  You Need Any Industrial Solution ... We Are Available For You</h2><span class="contactus-button2 text-center"><a href="contact.html" class="submit">Contact Us </a></span>
+              <h2>If  You Need Any Industrial Solution ... We Are Available For You</h2><span class="contactus-button2 text-center"><a href="{{ route('contact-us') }}" class="submit">Contact Us </a></span>
             </div>
           </div>
         </div>
       </div>
     </section>
     <!-- Indurial Solution-->
+
+
+  
+
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR3sdnYlBiO44_aBml7go6NF8wwLknZtc"></script>
+
+    
+
+    <script>
+      function initMap() {
+          var mapDiv = document.getElementById('contact-google-map');
+          var map = new google.maps.Map(mapDiv, {
+              center: {lat: 9.136700, lng: 7.360241},
+              zoom: parseInt(mapDiv.getAttribute('data-map-zoom')),
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+          });
+          
+          // Create an AdvancedMarkerElement
+          var marker = new google.maps.marker.AdvancedMarkerElement({
+              position: {lat: 9.136700, lng: 7.360241},
+              map: map,
+              title: 'SoilMenGeoTech Engineering',
+              icon: mapDiv.getAttribute('data-icon-path')
+          });
+      }
+  </script>
+  
+    </script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR3sdnYlBiO44_aBml7go6NF8wwLknZtc&callback=initMap"></script>
     @endsection

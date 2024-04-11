@@ -182,19 +182,114 @@
     <section class="team-wrapper team-wrapper4 clearfix">
       <div class="container clearfix">
         <div class="our-team-page">
-          {{-- <div class="section_header2">
-            <h2>Our Services</h2>
-            <div class="decor-line"></div>
-          </div> --}}
+         
           <div class="row event-pad">
+            
             <div class="col-sm-6 col-md-4 team">
-              <div class="box-img"><img src="images/team/pro1.jpg" alt="">
+              @if($StandardPenetrationTests && $StandardPenetrationTests->count() > 0)
+            @foreach($StandardPenetrationTests as $StandardPenetrationTest)
+              <div class="box-img"><img src="{{ asset($StandardPenetrationTest->image) }}" alt="">
                 <div class="caption">
                   <a href="{{ route('spt') }}"><h2>Standard Penetration Test</h2></a>
                   <p></p><a href="{{ route('spt') }}">Read more</a>
                 </div>
               </div>
+              @endforeach
             </div>
+            @else
+            @endif
+
+            <div class="col-sm-6 col-md-4 team">
+              @if($DutchConePenetrations && $DutchConePenetrations->count() > 0)
+            @foreach($DutchConePenetrations as $DutchConePenetration)
+              <div class="box-img"><img src="{{ asset($DutchConePenetration->image) }}" alt="">
+                <div class="caption">
+                  <a href="{{ route('dcp') }}"><h2>Dutch Cone Penetration</h2></a> 
+                  <p></p>
+                  <a href="{{ route('dcp') }}">Read more</a>  
+                </div>
+              </div>
+              @endforeach
+            </div>
+            @else
+            @endif
+
+            <div class="col-sm-6 col-md-4 team">
+              @if($LabTestServices && $LabTestServices->count() > 0)
+            @foreach($LabTestServices as $LabTestService)
+              <div class="box-img"><img src="{{ asset($LabTestService->image) }}" alt="">
+                <div class="caption">
+                  <a href="{{ route('lts') }}"><h2>Lab Test Services</h2></a> 
+                  <p></p><a href="{{ route('lts') }}">Read more</a>
+                </div>
+              </div>
+              @endforeach
+            </div>
+            @else
+            @endif
+
+            <div class="col-sm-6 col-md-4 team">
+              @if($CalibrationOfEquipments && $CalibrationOfEquipments->count() > 0)
+            @foreach($CalibrationOfEquipments as $CalibrationOfEquipment)
+              <div class="box-img"><img src="{{ asset($CalibrationOfEquipment->image) }}" alt="">
+                <div class="caption">
+                  <a href="{{ route('coe') }}"><h2>Calibration Of Equipments</h2></a> 
+                  <p></p><a href="{{ route('coe') }}">Read more</a>
+                </div>
+              </div>
+              @endforeach
+            </div>
+            @else
+            @endif
+
+
+            <div class="col-sm-6 col-md-4 team">
+              @if($PavementEvaluationTests && $PavementEvaluationTests->count() > 0)
+            @foreach($PavementEvaluationTests as $PavementEvaluationTest)
+              <div class="box-img"><img src="{{ asset($PavementEvaluationTest->image) }}" alt="">
+                <div class="caption">
+                  <a href="{{ route('pet') }}"><h2>Pavement Evaluation Test</h2></a> 
+                  <p></p><a href="{{ route('pet') }}">Read more</a>
+                </div>
+              </div>
+              @endforeach
+            </div>
+            @else
+            @endif
+
+            <div class="col-sm-6 col-md-4 team">
+              @if($QualityControls && $QualityControls->count() > 0)
+            @foreach($QualityControls as $QualityControl)
+              <div class="box-img"><img src="{{ asset($QualityControl->image) }}" alt="">
+                <div class="caption">
+                  <a href="{{ route('qa') }}"><h2>Quality Control</h2></a> 
+                  <p></p><a href="{{ route('qa') }}">Read more</a>
+                </div>
+              </div>
+              @endforeach
+            </div>
+            @else
+            @endif
+
+            <div class="col-sm-6 col-md-4 team">
+              @if($StructuralIntegrityTests && $StructuralIntegrityTests->count() > 0)
+            @foreach($StructuralIntegrityTests as $StructuralIntegrityTest)
+              <div class="box-img"><img src="{{ asset($StructuralIntegrityTest->image) }}" alt="">
+                <div class="caption">
+                  <a href="{{ route('sit') }}"><h2>Structural Integrity Test</h2></a> 
+                  <p></p><a href="{{ route('sit') }}">Read more</a>
+                </div>
+              </div>
+              @endforeach
+            </div>
+            @else
+            @endif
+
+
+
+
+
+{{-- 
             <div class="col-sm-6 col-md-4 team">
               <div class="box-img"><img src="images/team/pro2.jpg" alt="">
                 <div class="caption">
@@ -210,39 +305,25 @@
                   <p></p><a href="{{ route('sit') }}">Read more</a>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-6 col-md-4 team">
-              <div class="box-img"><img src="images/team/pro4.jpg" alt="">
-                <div class="caption">
-                  <a href="{{ route('coe') }}"><h2>Calibration of Equipments</h2></a>
-                  <p></p><a href="{{ route('coe') }}">Read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-4 team">
+            </div> --}}
+           
+            {{-- <div class="col-sm-6 col-md-4 team">
               <div class="box-img"><img src="images/team/pt1.jpeg" alt="">
                 <div class="caption">
                   <a href="{{ route('pet') }}"><h2>Pavement Evaluation Test</h2></a>
                   <p></p><a href="{{ route('pet') }}">Read more</a>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-6 col-md-4 team">
+            </div> --}}
+            {{-- <div class="col-sm-6 col-md-4 team">
             <div class="box-img"><img src="images/team/q1.jpeg" alt="">
                 <div class="caption">
                   <a href="{{ route('qa') }}"><h2>Quality Control and Quality Assurance</h2></a>
                   <p></p><a href="{{ route('qa') }}">Read more</a>
                 </div> 
               </div>
-            </div>
-            <div class="col-sm-6 col-md-4 team">
-              <div class="box-img"><img src="images/team/q1.jpeg" alt="">
-                  <div class="caption">
-                    <a href="{{ route('dcp') }}"><h2>Dutch Core Penetration</h2></a>
-                    <p></p><a href="{{ route('dcp') }}">Read more</a>
-                  </div> 
-                </div>
-              </div>
+            </div> --}}
+           
           </div>
         </div>
       </div>
@@ -268,7 +349,7 @@
               <input type="text" name="newsletter">
             </div>
             <div class="col-md-2">
-              <div class="req-button text-right"><a href="contact.html" class="submit">Subscribe<i class="fa fa-arrow-right"></i></a></div>
+              <div class="req-button text-right"><a href="{{ route('contact-us') }}" class="submit">Subscribe<i class="fa fa-arrow-right"></i></a></div>
             </div>
           </div>
         </div>
@@ -281,7 +362,7 @@
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="indurial-solution-text text-center">
-              <h2>If  You Need Any Solution ... We Are Available For You</h2><span class="contactus-button2 text-center"><a href="contact.html" class="submit">Contact Us </a></span>
+              <h2>If  You Need Any Solution ... We Are Available For You</h2><span class="contactus-button2 text-center"><a href="{{ route('contact-us') }}" class="submit">Contact Us </a></span>
             </div>
           </div>
         </div>
